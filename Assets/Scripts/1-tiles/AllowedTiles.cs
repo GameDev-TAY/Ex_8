@@ -1,17 +1,54 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+
+[System.Serializable]
+public class TileBaseSpeed
+{
+    public TileBase tileBase;
+    public float speed;
+}
 /**
  * This component just keeps a list of allowed tiles.
  * Such a list is used both for pathfinding and for movement.
  */
 public class AllowedTiles : MonoBehaviour  {
-    [SerializeField] TileBase[] allowedTiles = null;
+    [SerializeField] TileBaseSpeed[] allowedTiles = null;
 
-    public bool Contain(TileBase tile) {
-        return allowedTiles.Contains(tile);
+    public float GetSpeed(TileBase tile)
+    {
+        for (int i = 0; i < allowedTiles.Length; i++)
+        {
+            if (allowedTiles[i].tileBase.Equals(tile))
+            {
+                return allowedTiles[i].speed;
+            }
+        }
+        return 1;
     }
 
-    public TileBase[] Get() { return allowedTiles;  }
+    public bool Contain(TileBase tile) {
+        for(int i = 0; i < allowedTiles.Length; i++)
+        {
+            if (allowedTiles[0].tileBase.Equals(tile))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+   
+    public TileBase[] Get() {
+        TileBase[] toReturn = new TileBase[allowedTiles.Length];
+
+        for (int i =0; i<allowedTiles.Length; i++)
+        {
+            toReturn[i] = allowedTiles[i].tileBase;
+        }
+        return toReturn; 
+    }
+ 
 }

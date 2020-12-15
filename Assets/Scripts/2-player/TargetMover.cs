@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -7,11 +8,10 @@ using UnityEngine.Tilemaps;
  * This component moves its object towards a given target position.
  */
 public class TargetMover: MonoBehaviour {
-    [SerializeField] Tilemap tilemap = null;
-    [SerializeField] AllowedTiles allowedTiles = null;
+    [SerializeField] protected Tilemap tilemap = null;
+    [SerializeField] protected AllowedTiles allowedTiles = null;
 
-    [Tooltip("The speed by which the object moves towards the target, in meters (=grid units) per second")]
-    [SerializeField] float speed = 2f;
+    float speed = 2f;
 
     [Tooltip("Maximum number of iterations before BFS algorithm gives up on finding a path")]
     [SerializeField] int maxIterations = 1000;
@@ -39,14 +39,26 @@ public class TargetMover: MonoBehaviour {
     private TilemapGraph tilemapGraph = null;
     private float timeBetweenSteps;
 
+    protected void UpdateTimeBetweenSteps (TileBase tileBase) {
+        speed = allowedTiles.GetSpeed(tileBase);
+        timeBetweenSteps = 1 / speed;
+    }
+
     protected virtual void Start() {
         tilemapGraph = new TilemapGraph(tilemap, allowedTiles.Get());
         timeBetweenSteps = 1 / speed;
         StartCoroutine(MoveTowardsTheTarget());
     }
 
+    private TileBase TileOnPosition(Vector3 worldPosition)
+    {
+        Vector3Int cellPosition = tilemap.WorldToCell(worldPosition);
+        return tilemap.GetTile(cellPosition);
+    }
+
     IEnumerator MoveTowardsTheTarget() {
         for(;;) {
+            UpdateTimeBetweenSteps(TileOnPosition(transform.position));
             yield return new WaitForSeconds(timeBetweenSteps);
             if (enabled && !atTarget)
                 MakeOneStepTowardsTheTarget();
