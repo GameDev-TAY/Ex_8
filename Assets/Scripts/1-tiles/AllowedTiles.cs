@@ -32,8 +32,8 @@ public class AllowedTiles : MonoBehaviour  {
     public bool Contain(TileBase tile) {
         for(int i = 0; i < allowedTiles.Length; i++)
         {
-            if (allowedTiles[0].tileBase.Equals(tile))
-            {
+            if (allowedTiles[i].tileBase.Equals(tile))
+            { 
                 return true;
             }
         }

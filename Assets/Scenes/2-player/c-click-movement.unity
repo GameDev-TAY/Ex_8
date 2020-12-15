@@ -415,6 +415,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 931517250}
   allowedTiles: {fileID: 73550133}
+  mountain: {fileID: 11400000, guid: 546c35550ead79941af5f505fdd175ec, type: 2}
+  hill: {fileID: 11400000, guid: 2ad1759387b28444892c8549e6122652, type: 2}
+  toQuarry: 120
 --- !u!1 &931517247
 GameObject:
   m_ObjectHideFlags: 0
