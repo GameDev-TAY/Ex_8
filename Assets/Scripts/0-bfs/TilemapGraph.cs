@@ -47,7 +47,7 @@ public class TilemapGraph : IWeightedGraph<Vector3Int>
 
     public float Distance(Vector3Int node, Vector3Int neighbor)
     {
-        return allowedTiles.GetSpeed(tilemap.GetTile(node));
+        return 5/(allowedTiles.GetSpeed(tilemap.GetTile(neighbor)));
     }
 
     public float AirDistance(Vector3Int node, Vector3Int otherNode)
