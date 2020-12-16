@@ -18,7 +18,7 @@ In order for this change to happen we added the modified files:
 In [AllowedTiles](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/1-tiles/AllowedTiles.cs) we have added a new class called: TileBaseSpeed which has two attributes one of the TileBase type and the other is the speed, The nodes in the list of allowed tiles will be of the new class type TileBaseSpeed.
 Since we changed the type of nodes of the list, we changed the transition over the list in the existing functions on the list, and added the GetSpeed function.
 
-We have 16 tiles allowed:
+We have 16 tiles allowed.
 
 * Here you can see that the player walks much more slowly on ___ than on the ____:
 
@@ -38,5 +38,6 @@ Currently the movement buttons are around the "G" button on the keyboard so:
 
 In order for this change to happen we added the modified file: [KeyboardMoverByTile](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/2-player/KeyboardMoverByTile.cs) . <br /> 
 We added three fields to the class, a tile that marks a mountain, a tile that marks a hill and the button that marks the quarry.They are all SerializeField.
+In the update function we checked whether the quarrying key was pressed and if there is a place to quarry in the direction the player is requesting and if enough time has passed since the last quarrying, then we update the quarrying causes delay and update a new location.
 
 <img align="left" width="400px" src="" /> 
