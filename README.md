@@ -47,11 +47,11 @@ Currently the movement buttons are around the "G" button on the keyboard so:
 In order for this change to happen we added the modified file: [KeyboardMoverByTile](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/2-player/KeyboardMoverByTile.cs) . <br /> 
 We added three fields to the class, a tile that marks a mountain, a tile that marks a hill and the button that marks the quarry.They are all SerializeField. <br />
 
-Mountain:  <img align="left" width="50px" height="50px" src="https://user-images.githubusercontent.com/57855070/102372928-5bbc2c80-3fc8-11eb-93af-741c1ca290a1.png"/>
+Mountain  <img align="left" width="50px" height="50px" src="https://user-images.githubusercontent.com/57855070/102372928-5bbc2c80-3fc8-11eb-93af-741c1ca290a1.png"/>
 
 <br />
 
-Hill:  <img align="left" width="50px" height="50px" src="https://user-images.githubusercontent.com/57855070/102373414-d5541a80-3fc8-11eb-8939-663ea9091217.png"/>
+Hill  <img align="left" width="50px" height="50px" src="https://user-images.githubusercontent.com/57855070/102373414-d5541a80-3fc8-11eb-8939-663ea9091217.png"/>
 
 <br />
 
