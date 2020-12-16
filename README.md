@@ -29,18 +29,20 @@ We have 16 tiles allowed: <br />
 
 <br /> <br />
 
-* Here you can see that the player walks much more slowly on brown than on the yellow:
+* Here you can see that the player walks much more slowly on brown than on the green:
 
+  <img align="left" width="300px" height="200px" src="https://user-images.githubusercontent.com/57855070/102371628-11867b80-3fc7-11eb-94ee-a11c7fe4829b.gif"/>
 
+<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 #### **2.We added that the player will have the option to carve on a mountain -** <br />
 By pressing X and the button of the direction he wants to carve. Quarrying will be slower than normal walking.
 Currently the movement buttons are around the "G" button on the keyboard so:
-"T" to the left
-"Y" up right
-"H" to the right
-"B" bottom right
-"V" bottom left
-"F" left
+"T" to the left <br />
+"Y" up right <br />
+"H" to the right <br />
+"B" bottom right <br />
+"V" bottom left <br />
+"F" left <br />
 
 In order for this change to happen we added the modified file: [KeyboardMoverByTile](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/2-player/KeyboardMoverByTile.cs) . <br /> 
 We added three fields to the class, a tile that marks a mountain, a tile that marks a hill and the button that marks the quarry.They are all SerializeField.
