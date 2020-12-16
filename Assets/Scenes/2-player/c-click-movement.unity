@@ -37758,35 +37758,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allowedTiles:
   - tileBase: {fileID: 11400000, guid: 0f7be247a798aed4e8f4f4b80d53e196, type: 2}
-    speed: 10
+    speed: 20
   - tileBase: {fileID: 11400000, guid: 5e91353867c143f46b86e42d8c6b9c47, type: 2}
-    speed: 9
+    speed: 18
   - tileBase: {fileID: 11400000, guid: 89c61bba129d3b340965409303e76054, type: 2}
-    speed: 8
+    speed: 16
   - tileBase: {fileID: 11400000, guid: 89372a8eda8c78e4ab9778b277dd611e, type: 2}
-    speed: 7
+    speed: 14
   - tileBase: {fileID: 11400000, guid: 9e5cd1888a26c634c8f3984b2719f3dc, type: 2}
-    speed: 8
+    speed: 16
   - tileBase: {fileID: 11400000, guid: b86726698d5846847847e4c0c18fb366, type: 2}
-    speed: 7
+    speed: 14
   - tileBase: {fileID: 11400000, guid: 2b8c2b9b06b0296499ea76924390ffd6, type: 2}
-    speed: 6
+    speed: 12
   - tileBase: {fileID: 11400000, guid: fde271316ec1933499fdf2f5c8193a70, type: 2}
-    speed: 5
+    speed: 10
   - tileBase: {fileID: 11400000, guid: 56a55ce20d1b7684daa52ffb7841277c, type: 2}
-    speed: 6
+    speed: 12
   - tileBase: {fileID: 11400000, guid: 2ce586f732854a9418012b73c4033288, type: 2}
-    speed: 6
+    speed: 12
   - tileBase: {fileID: 11400000, guid: 45e46da3af3a9b942bfa1c16821a28a0, type: 2}
-    speed: 5
+    speed: 10
   - tileBase: {fileID: 11400000, guid: 5e43fee120a26db45a78e780f9d0bf0a, type: 2}
-    speed: 4
+    speed: 8
   - tileBase: {fileID: 11400000, guid: c0729448d6b13b945a409b898d2930f4, type: 2}
-    speed: 5
+    speed: 10
   - tileBase: {fileID: 11400000, guid: a1d2b613f41fab147822d2f745b45349, type: 2}
-    speed: 4
+    speed: 8
   - tileBase: {fileID: 11400000, guid: e27b328bec2ec564495383e5378f6ce6, type: 2}
-    speed: 2
+    speed: 4
   - tileBase: {fileID: 11400000, guid: acc87c72f567a994b870a1c3987b709a, type: 2}
     speed: 1
 --- !u!1 &1727499700

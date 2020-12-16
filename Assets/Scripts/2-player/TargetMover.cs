@@ -42,7 +42,7 @@ public class TargetMover: MonoBehaviour {
 
     protected void UpdateTimeBetweenSteps (TileBase tileBase) {
         speed = allowedTiles.GetSpeed(tileBase);
-        timeBetweenSteps = 1 / speed;
+        timeBetweenSteps = 5 / speed;
     }
 
     protected virtual void Start() {
