@@ -19,7 +19,15 @@ In [AllowedTiles](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts
 Since we changed the type of nodes of the list, we changed the transition over the list in the existing functions on the list, and added the GetSpeed function.
 In the class [TargetMover](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/2-player/TargetMover.cs) we changed the update function so that the display of the player character's movement would be affected by any tile speed by the UpdateTimeBetweenSteps function.
 
-We have 16 tiles allowed.
+We have 16 tiles allowed: <br />
+
+<img align="left" width="200px" height="50px" src="https://user-images.githubusercontent.com/57855070/102368961-1c8bdc80-3fc4-11eb-84a6-147fe3f1df01.png" />  
+<img align="left" width="200px" height="50px" src="https://user-images.githubusercontent.com/57855070/102368630-bd2dcc80-3fc3-11eb-95b4-c46c5d525812.png" />  
+<img align="left" width="150px" height="50px" src="https://user-images.githubusercontent.com/57855070/102369223-6248a500-3fc4-11eb-81f2-2031c054fadb.png" />
+<img align="left" width="200px" height="50px" src="https://user-images.githubusercontent.com/57855070/102370494-c9b32480-3fc5-11eb-9326-38df7454edca.png" />  
+<img align="left" width="50px" height="50px" src="https://user-images.githubusercontent.com/57855070/102369618-d2efc180-3fc4-11eb-86f2-e97b99e32e7a.png" />
+
+<br /> <br />
 
 * Here you can see that the player walks much more slowly on brown than on the yellow:
 
