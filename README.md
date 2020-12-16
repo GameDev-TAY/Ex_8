@@ -1,20 +1,19 @@
-# Unity week 5: Two-dimensional scene-building and path-finding
 
-A project with step-by-step scenes illustrating how to construct a 2D scene using tilemaps,
-and how to do path-finding using the BFS algorithm.
+![image](https://user-images.githubusercontent.com/57855070/102347040-826a6b00-3fa8-11eb-86b4-4cd80509b9e9.png)
 
+This project was done as part of the "Computer Game Development" course at Ariel University.
 
-## Credits
+You can see the assignment at the [following link](https://github.com/gamedev-at-ariel/gamedev-5781/blob/master/08-unity-tilemap-algorithms/homework.pdf)
 
-Graphics:
-* [Ultima 4 Graphics](https://github.com/jahshuwaa/u4graphics) by Joshua Steele.
+You will see the basic code we started working on at the [following link](https://github.com/gamedev-at-ariel/05-tilemap-pathfinding)
 
-Online course:
-* [Unity 2D](https://www.udemy.com/course/unitycourse/learn/lecture/10246496), a Udemy course by Gamedev.tv.
-* [Unity RPG](https://www.gamedev.tv/p/unity-rpg/?product_id=1503859&coupon_code=JOINUS).
+We made 4 changes:
 
-Procedural generation:
-* [Habrador - Unity Programming Patterns](https://github.com/Habrador/Unity-Programming-Patterns#7-double-buffer)
+**1.Changed the game so that the player's walking speed depends on the tiles he is walking on -** 
+In order for this change to happen we added the modified files:
+[AllowedTiles](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/1-tiles/AllowedTiles.cs) ,
+[TargetMover](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/2-player/TargetMover.cs)
 
-Programming:
-* Erel Segal-Halevi
+In [AllowedTiles](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/1-tiles/AllowedTiles.cs) we have added a new class called: TileBaseSpeed which has two attributes one of the TileBase type and the other is the speed, The nodes in the list of allowed tiles will be of the new class type TileBaseSpeed.
+Since we changed the type of nodes of the list, we changed the transition over the list in the existing functions on the list, and added the GetSpeed function.
+
