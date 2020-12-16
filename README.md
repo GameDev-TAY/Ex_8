@@ -7,11 +7,13 @@ You can see the assignment at the [following link](https://github.com/gamedev-at
 
 You will see the basic code we started working on at the [following link](https://github.com/gamedev-at-ariel/05-tilemap-pathfinding) .
 
+You are welcome to play [our game](https://gamedev-tay.itch.io/hexagon-island)
+
 ## We made 4 changes:
 ***
 
 #### **1.Changed the game so that the player's walking speed depends on the tiles he is walking on -** <br />
-In order for this change to happen we added the modified files:
+In order for this change to happen, We've made changes to the following files:
 [AllowedTiles](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/1-tiles/AllowedTiles.cs) ,
 [TargetMover](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/2-player/TargetMover.cs)
 
@@ -27,7 +29,7 @@ We have 16 tiles allowed: <br />
 <img align="left" width="200px" height="50px" src="https://user-images.githubusercontent.com/57855070/102370494-c9b32480-3fc5-11eb-9326-38df7454edca.png" />  
 <img align="left" width="50px" height="50px" src="https://user-images.githubusercontent.com/57855070/102369618-d2efc180-3fc4-11eb-86f2-e97b99e32e7a.png" />
 
-<br /> <br />
+<br /> <br /> <br />
 
 * Here you can see that the player walks much more slowly on brown than on the green:
 
@@ -36,7 +38,7 @@ We have 16 tiles allowed: <br />
 <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 #### **2.We added that the player will have the option to carve on a mountain -** <br />
 By pressing X and the button of the direction he wants to carve. Quarrying will be slower than normal walking.
-Currently the movement buttons are around the "G" button on the keyboard so:
+Currently the movement buttons are around the "G" button on the keyboard so: <br />
 "T" to the left <br />
 "Y" up right <br />
 "H" to the right <br />
@@ -44,11 +46,27 @@ Currently the movement buttons are around the "G" button on the keyboard so:
 "V" bottom left <br />
 "F" left <br />
 
-In order for this change to happen we added the modified file: [KeyboardMoverByTile](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/2-player/KeyboardMoverByTile.cs) . <br /> 
-We added three fields to the class, a tile that marks a mountain, a tile that marks a hill and the button that marks the quarry.They are all SerializeField.
+In order for this change to happen, We've made changes to the following file: [KeyboardMoverByTile](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/2-player/KeyboardMoverByTile.cs) . <br /> 
+We added three fields to the class: a tile that marks a mountain, a tile that marks a hill and the button that marks the quarry.They are all SerializeField. <br />
+
+The tiles that are set: <br />
+
+Mountain  <img align="left" width="50px" height="50px" src="https://user-images.githubusercontent.com/57855070/102372928-5bbc2c80-3fc8-11eb-93af-741c1ca290a1.png"/>
+
+<br />
+
+Hill  <img align="left" width="50px" height="50px" src="https://user-images.githubusercontent.com/57855070/102373414-d5541a80-3fc8-11eb-8939-663ea9091217.png"/>
+
+<br />
+
 In the update function we checked whether the quarrying key was pressed and if there is a place to quarry in the direction the player is requesting and if enough time has passed since the last quarrying, then we update the quarrying causes delay and update a new location.
 
 * Here you can see that the player carved in the rock:
+
+  <img align="left" width="300px" height="200px" src="https://user-images.githubusercontent.com/57855070/102372516-ef412d80-3fc7-11eb-86b0-b85791b9423b.gif"/>
+
+
+<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 
 #### **3.We changed the rectangular grid to hexagon grid -** <br />
 By simply setting up a new grid and adding new sprites from the [asset store](https://assetstore.unity.com/packages/2d/environments/2d-hex-sprites-hexagonal-tile-setup-135185)
