@@ -6,12 +6,12 @@ using UnityEngine.Tilemaps;
 /**
  * A graph that represents a tilemap, using only the allowed tiles.
  */
-public class TilemapGraph : IGraph<Vector3Int>
+public class TilemapGraph : IWeightedGraph<Vector3Int>
 {
     private Tilemap tilemap;
-    private TileBase[] allowedTiles;
+    private AllowedTiles allowedTiles;
 
-    public TilemapGraph(Tilemap tilemap, TileBase[] allowedTiles)
+    public TilemapGraph(Tilemap tilemap, AllowedTiles allowedTiles)
     {
         this.tilemap = tilemap;
         this.allowedTiles = allowedTiles;
@@ -44,47 +44,14 @@ public class TilemapGraph : IGraph<Vector3Int>
             }
         }
     }
-}
 
-
-/**
-using System.Linq;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Tilemaps;
-
-/**
- * A graph that represents a tilemap, using only the allowed tiles.
- /
-public class TilemapGraph : IGraph<Vector3Int>
-{
-    private Tilemap tilemap;
-    private TileBase[] allowedTiles;
-
-    public TilemapGraph(Tilemap tilemap, TileBase[] allowedTiles)
+    public float Distance(Vector3Int node, Vector3Int neighbor)
     {
-        this.tilemap = tilemap;
-        this.allowedTiles = allowedTiles;
+        return allowedTiles.GetSpeed(tilemap.GetTile(node));
     }
 
-    static Vector3Int[] directions = {
-            new Vector3Int(-1, 1, 0),
-            new Vector3Int(0, 1, 0),
-            new Vector3Int(-1, -1, 0),
-            new Vector3Int(0, -1, 0),
-            new Vector3Int(1, 0, 0),
-            new Vector3Int(-1, 0, 0),
-    };
-
-    public IEnumerable<Vector3Int> Neighbors(Vector3Int node)
+    public float AirDistance(Vector3Int node, Vector3Int otherNode)
     {
-        foreach (var direction in directions)
-        {
-            Vector3Int neighborPos = node + direction;
-            TileBase neighborTile = tilemap.GetTile(neighborPos);
-            if (allowedTiles.Contains(neighborTile))
-                yield return neighborPos;
-        }
+        return 5 * (Mathf.Abs(node.x - otherNode.x) + Mathf.Abs(node.y - otherNode.y));
     }
 }
-**/

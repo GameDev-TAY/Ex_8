@@ -46,7 +46,7 @@ public class TargetMover: MonoBehaviour {
     }
 
     protected virtual void Start() {
-        tilemapGraph = new TilemapGraph(tilemap, allowedTiles.Get());
+        tilemapGraph = new TilemapGraph(tilemap, allowedTiles);
         timeBetweenSteps = 1 / speed;
         StartCoroutine(MoveTowardsTheTarget());
     }
@@ -69,7 +69,7 @@ public class TargetMover: MonoBehaviour {
     private void MakeOneStepTowardsTheTarget() {
         Vector3Int startNode = tilemap.WorldToCell(transform.position);
         Vector3Int endNode = targetInGrid;
-        List<Vector3Int> shortestPath = BFS.GetPath(tilemapGraph, startNode, endNode, maxIterations);
+        List<Vector3Int> shortestPath = AStar.GetPath(tilemapGraph, startNode, endNode, maxIterations);
         //Debug.Log("shortestPath = " + string.Join(" , ",shortestPath));
         if (shortestPath.Count >= 2) {
             Vector3Int nextNode = shortestPath[1];

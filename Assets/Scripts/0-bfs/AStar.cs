@@ -7,57 +7,105 @@
  */
 public class AStar {
 
-    public static void FindPath<Vector3Int>(
-            IGraph<Vector3Int> graph, 
-            Vector3Int startNode, Vector3Int endNode, 
-            List<Vector3Int> outputPath, int maxiterations=1000)
+    public static void FindPath<NodeType>(
+            IWeightedGraph<NodeType> graph,
+            NodeType startNode, NodeType endNode, 
+            List<NodeType> outputPath, int maxiterations=1000)
     {
-        
+        Dictionary<NodeType, NodeType> cameFrom = new Dictionary<NodeType, NodeType>();
+        Dictionary<NodeType, float> costSoFar = new Dictionary<NodeType, float>();
 
+        PriorityQueue<NodeType> openQueue = new PriorityQueue<NodeType>();
 
+        openQueue.Enqueue(startNode, 0f);
+        cameFrom.Add(startNode, startNode); // is set to start, None in example
+        costSoFar.Add(startNode, 0f);
 
+        while (openQueue.Count > 0)
+        {
+            NodeType curr = openQueue.Dequeue();
 
+            if (curr.Equals(endNode)) break;
 
+            foreach (var neighbor in graph.Neighbors(curr))
+            {
+                float newCost = costSoFar[curr] + graph.Distance(curr, neighbor);
 
-        /**
-         * **/
-        Queue<Vector3Int> openQueue = new Queue<Vector3Int>();
-        HashSet<Vector3Int> closedSet = new HashSet<Vector3Int>();
-        Dictionary<Vector3Int, Vector3Int> previous = new Dictionary<Vector3Int, Vector3Int>();
-        openQueue.Enqueue(startNode);
-        int i; for (i = 0; i < maxiterations; ++i) { // After maxiterations, stop and return an empty path
-            if (openQueue.Count == 0) {
-                break;
-            } else {
-                Vector3Int searchFocus = openQueue.Dequeue();
+                // If there's no cost assigned to the neighbor yet, or if the new
+                // cost is lower than the assigned one, add newCost for this neighbor
+                if (!costSoFar.ContainsKey(neighbor) || newCost < costSoFar[neighbor])
+                {
 
-                if (searchFocus.Equals(endNode)) {
-                    // We found the target -- now construct the path:
-                    outputPath.Add(endNode);
-                    while (previous.ContainsKey(searchFocus)) {
-                        searchFocus = previous[searchFocus];
-                        outputPath.Add(searchFocus);
+                    // If we're replacing the previous cost, remove it
+                    if (costSoFar.ContainsKey(neighbor))
+                    {
+                        costSoFar.Remove(neighbor);
+                        cameFrom.Remove(neighbor);
                     }
-                    outputPath.Reverse();
-                    break;
-                } else {
-                    // We did not found the target yet -- develop new nodes.
-                    foreach (var neighbor in graph.Neighbors(searchFocus)) {
-                        if (closedSet.Contains(neighbor)) {
-                            continue;
-                        }
-                        openQueue.Enqueue(neighbor);
-                        previous[neighbor] = searchFocus;
-                    }
-                    closedSet.Add(searchFocus);
+
+                    costSoFar.Add(neighbor, newCost);
+                    cameFrom.Add(neighbor, curr);
+                    float priority = newCost + graph.AirDistance(neighbor, endNode);
+                    openQueue.Enqueue(neighbor, priority);
                 }
             }
         }
-        /**
-        **/
+
+        NodeType current = endNode;
+        outputPath.Add(current);
+        while (!current.Equals(startNode))
+        {
+            if (!cameFrom.ContainsKey(current))
+            {
+                outputPath =  new List<NodeType>();
+                break;
+            }
+            outputPath.Add(current);
+            current = cameFrom[current];
+        }
+        outputPath.Add(startNode);
+        outputPath.Reverse();
+
     }
 
-    public static List<NodeType> GetPath<NodeType>(IGraph<NodeType> graph, NodeType startNode, NodeType endNode, int maxiterations=1000) {
+
+
+    public class PriorityQueue<T>
+    {
+        private List<KeyValuePair<T, float>> elements = new List<KeyValuePair<T, float>>();
+
+        public int Count
+        {
+            get { return elements.Count; }
+        }
+
+        public void Enqueue(T item, float priority)
+        {
+            elements.Add(new KeyValuePair<T, float>(item, priority));
+        }
+
+        // Returns the Location that has the lowest priority
+        public T Dequeue()
+        {
+            int bestIndex = 0;
+
+            for (int i = 0; i < elements.Count; i++)
+            {
+                if (elements[i].Value < elements[bestIndex].Value)
+                {
+                    bestIndex = i;
+                }
+            }
+
+            T bestItem = elements[bestIndex].Key;
+            elements.RemoveAt(bestIndex);
+            return bestItem;
+        }
+    }
+
+
+
+    public static List<NodeType> GetPath<NodeType>(IWeightedGraph<NodeType> graph, NodeType startNode, NodeType endNode, int maxiterations=1000) {
         List<NodeType> path = new List<NodeType>();
         FindPath(graph, startNode, endNode, path, maxiterations);
         return path;

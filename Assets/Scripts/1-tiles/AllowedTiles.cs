@@ -26,10 +26,10 @@ public class AllowedTiles : MonoBehaviour  {
                 return allowedTiles[i].speed;
             }
         }
-        return 1;
+        return 0;
     }
 
-    public bool Contain(TileBase tile) {
+    public bool Contains(TileBase tile) {
         for(int i = 0; i < allowedTiles.Length; i++)
         {
             if (allowedTiles[i].tileBase.Equals(tile))

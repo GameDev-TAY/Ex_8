@@ -32,7 +32,7 @@ public class KeyboardMoverByTile: KeyboardMover {
     void Update()  {
         Vector3 newPosition = NewPosition();
         TileBase tileOnNewPosition = TileOnPosition(newPosition);
-        if (allowedTiles.Contain(tileOnNewPosition))
+        if (allowedTiles.Contains(tileOnNewPosition))
         {
             transform.position = newPosition;
         }
