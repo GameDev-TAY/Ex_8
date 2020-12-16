@@ -17,10 +17,11 @@ In order for this change to happen we added the modified files:
 
 In [AllowedTiles](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/1-tiles/AllowedTiles.cs) we have added a new class called: TileBaseSpeed which has two attributes one of the TileBase type and the other is the speed, The nodes in the list of allowed tiles will be of the new class type TileBaseSpeed.
 Since we changed the type of nodes of the list, we changed the transition over the list in the existing functions on the list, and added the GetSpeed function.
+In the class [TargetMover](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/2-player/TargetMover.cs) we changed the update function so that the display of the player character's movement would be affected by any tile speed by the UpdateTimeBetweenSteps function.
 
 We have 16 tiles allowed.
 
-* Here you can see that the player walks much more slowly on ___ than on the ____:
+* Here you can see that the player walks much more slowly on brown than on the yellow:
 
 
 #### **2.We added that the player will have the option to carve on a mountain -** <br />
