@@ -28,6 +28,7 @@ public class TargetMover: MonoBehaviour {
         if (targetInWorld != newTarget) {
             targetInWorld = newTarget;
             targetInGrid = tilemap.WorldToCell(targetInWorld);
+            Debug.Log("Click :" + targetInGrid);
             atTarget = false;
         }
     }
@@ -69,7 +70,7 @@ public class TargetMover: MonoBehaviour {
         Vector3Int startNode = tilemap.WorldToCell(transform.position);
         Vector3Int endNode = targetInGrid;
         List<Vector3Int> shortestPath = BFS.GetPath(tilemapGraph, startNode, endNode, maxIterations);
-        Debug.Log("shortestPath = " + string.Join(" , ",shortestPath));
+        //Debug.Log("shortestPath = " + string.Join(" , ",shortestPath));
         if (shortestPath.Count >= 2) {
             Vector3Int nextNode = shortestPath[1];
             transform.position = tilemap.GetCellCenterWorld(nextNode);

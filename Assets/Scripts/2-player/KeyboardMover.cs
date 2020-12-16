@@ -11,9 +11,9 @@ public class KeyboardMover : MonoBehaviour {
         } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
             return transform.position + Vector3.right;
         } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
-            return transform.position + Vector3.down;
+            return transform.position + new Vector3(-0.5f, -0.75f);
         } else if (Input.GetKeyDown(KeyCode.UpArrow)) {
-            return transform.position + Vector3.up;
+            return transform.position + new Vector3(0.5f, 0.75f);
         } else {
             return transform.position;
         }
