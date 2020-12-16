@@ -29,7 +29,7 @@ We have 16 tiles allowed: <br />
 <img align="left" width="200px" height="50px" src="https://user-images.githubusercontent.com/57855070/102370494-c9b32480-3fc5-11eb-9326-38df7454edca.png" />  
 <img align="left" width="50px" height="50px" src="https://user-images.githubusercontent.com/57855070/102369618-d2efc180-3fc4-11eb-86f2-e97b99e32e7a.png" />
 
-<br /> <br />
+<br /> <br /> <br />
 
 * Here you can see that the player walks much more slowly on brown than on the green:
 
@@ -62,7 +62,8 @@ Hill  <img align="left" width="50px" height="50px" src="https://user-images.gith
 In the update function we checked whether the quarrying key was pressed and if there is a place to quarry in the direction the player is requesting and if enough time has passed since the last quarrying, then we update the quarrying causes delay and update a new location.
 
 * Here you can see that the player carved in the rock:
- <img align="left" width="300px" height="200px" src="https://user-images.githubusercontent.com/57855070/102372516-ef412d80-3fc7-11eb-86b0-b85791b9423b.gif"/>
+
+  <img align="left" width="300px" height="200px" src="https://user-images.githubusercontent.com/57855070/102372516-ef412d80-3fc7-11eb-86b0-b85791b9423b.gif"/>
 
 
 <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
