@@ -52,6 +52,6 @@ public class TilemapGraph : IWeightedGraph<Vector3Int>
 
     public float AirDistance(Vector3Int node, Vector3Int otherNode)
     {
-        return 5 * (Mathf.Abs(node.x - otherNode.x) + Mathf.Abs(node.y - otherNode.y));
+        return (Mathf.Abs(node.x - otherNode.x) + Mathf.Abs(node.y - otherNode.y));
     }
 }
