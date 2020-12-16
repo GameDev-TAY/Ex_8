@@ -3,11 +3,12 @@
 
 This project was done as part of the "Computer Game Development" course at Ariel University.
 
-You can see the assignment at the [following link](https://github.com/gamedev-at-ariel/gamedev-5781/blob/master/08-unity-tilemap-algorithms/homework.pdf)
+You can see the assignment at the [following link](https://github.com/gamedev-at-ariel/gamedev-5781/blob/master/08-unity-tilemap-algorithms/homework.pdf) .
 
-You will see the basic code we started working on at the [following link](https://github.com/gamedev-at-ariel/05-tilemap-pathfinding)
+You will see the basic code we started working on at the [following link](https://github.com/gamedev-at-ariel/05-tilemap-pathfinding) .
 
-We made 4 changes:
+## We made 4 changes:
+***
 
 **1.Changed the game so that the player's walking speed depends on the tiles he is walking on -** 
 In order for this change to happen we added the modified files:
