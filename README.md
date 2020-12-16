@@ -43,9 +43,12 @@ In the update function we checked whether the quarrying key was pressed and if t
 By simply setting up a new grid and adding new sprites from the [asset store](https://assetstore.unity.com/packages/2d/environments/2d-hex-sprites-hexagonal-tile-setup-135185)
 and create new [Palette](https://github.com/GameDev-TAY/Ex_8/tree/master/Assets/HexSpriteTiles_Setup/Palettes).
 
-**4.**
+**4.Paint with Unity tiles-**
 We found on this [site](https://www.myabandonware.com/) A game that has a two-dimensional world at a glance, and we drew one level of it in the Unity tile map.
 It's in the scene [BUMFIGHT](https://github.com/GameDev-TAY/Ex_8/tree/master/Assets/Scenes/5-bumfight)
+
+<img align="left" width="400px" src="https://user-images.githubusercontent.com/57855070/102362951-9cfb0f00-3fbd-11eb-9160-9ca94d312d9c.png" />  
+
 
 
 
