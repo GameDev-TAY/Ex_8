@@ -49,6 +49,10 @@ We added three fields to the class, a tile that marks a mountain, a tile that ma
 In the update function we checked whether the quarrying key was pressed and if there is a place to quarry in the direction the player is requesting and if enough time has passed since the last quarrying, then we update the quarrying causes delay and update a new location.
 
 * Here you can see that the player carved in the rock:
+ <img align="left" width="300px" height="200px" src="https://user-images.githubusercontent.com/57855070/102372516-ef412d80-3fc7-11eb-86b0-b85791b9423b.gif"/>
+
+
+<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 
 #### **3.We changed the rectangular grid to hexagon grid -** <br />
 By simply setting up a new grid and adding new sprites from the [asset store](https://assetstore.unity.com/packages/2d/environments/2d-hex-sprites-hexagonal-tile-setup-135185)
