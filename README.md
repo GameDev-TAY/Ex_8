@@ -31,9 +31,9 @@ We have 16 tiles allowed: <br />
 
 <br /> <br /> <br />
 
-* Here you can see that the player walks much more slowly on brown than on the green:
+* Here you can see that the player walks much more slowly on Orange-yellow than on the yellow:
 
-  <img align="left" width="300px" height="200px" src="https://user-images.githubusercontent.com/57855070/102371628-11867b80-3fc7-11eb-94ee-a11c7fe4829b.gif"/>
+  <img align="left" width="300px" height="200px" src="https://user-images.githubusercontent.com/57855070/102458545-15f57780-404d-11eb-868b-17c3b4eecfdf.gif"/>
 
 <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 #### **2.We added that the player will have the option to carve on a mountain -** <br />
