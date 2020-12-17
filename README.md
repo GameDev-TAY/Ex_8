@@ -63,7 +63,7 @@ In the update function we checked whether the quarrying key was pressed and if t
 
 * Here you can see that the player carved in the rock:
 
-  <img align="left" width="300px" height="200px" src="https://user-images.githubusercontent.com/57855070/102372516-ef412d80-3fc7-11eb-86b0-b85791b9423b.gif"/>
+  <img align="left" width="300px" height="200px" src="https://user-images.githubusercontent.com/57855070/102456169-6ec31100-4049-11eb-91fd-4adf27a9d482.gif"/>
 
 
 <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
