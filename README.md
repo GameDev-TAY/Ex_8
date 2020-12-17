@@ -71,6 +71,7 @@ In the update function we checked whether the quarrying key was pressed and if t
 #### **3.We changed the rectangular grid to hexagon grid -** <br />
 By simply setting up a new grid and adding new sprites from the [asset store](https://assetstore.unity.com/packages/2d/environments/2d-hex-sprites-hexagonal-tile-setup-135185)
 and create new [Palette](https://github.com/GameDev-TAY/Ex_8/tree/master/Assets/HexSpriteTiles_Setup/Palettes).
+We changed the algorithm from [BFS](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/0-bfs/BFS.cs) to [ASTAR](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/0-bfs/AStar.cs)
 
 #### **4.Paint with Unity tiles-** <br />
 We found on this [site](https://www.myabandonware.com/) A game that has a two-dimensional world at a glance, and we drew one level of it in the Unity tile map.
