@@ -1,10 +1,5 @@
 ﻿using System.Collections.Generic;
 
-/**
- * A generic implementation of the BFS algorithm.
- * @author Erel Segal-Halevi
- * @since 2020-02
- */
 public class AStar {
 
     public static void FindPath<NodeType>(
@@ -14,7 +9,6 @@ public class AStar {
     {
         Dictionary<NodeType, NodeType> cameFrom = new Dictionary<NodeType, NodeType>();
         Dictionary<NodeType, float> costSoFar = new Dictionary<NodeType, float>();
-
         PriorityQueue<NodeType> openQueue = new PriorityQueue<NodeType>();
 
         openQueue.Enqueue(startNode, 0f);
@@ -24,25 +18,18 @@ public class AStar {
         while (openQueue.Count > 0)
         {
             NodeType curr = openQueue.Dequeue();
-
             if (curr.Equals(endNode)) break;
 
             foreach (var neighbor in graph.Neighbors(curr))
             {
                 float newCost = costSoFar[curr] + graph.Distance(curr, neighbor);
-
-                // If there's no cost assigned to the neighbor yet, or if the new
-                // cost is lower than the assigned one, add newCost for this neighbor
                 if (!costSoFar.ContainsKey(neighbor) || newCost < costSoFar[neighbor])
                 {
-
-                    // If we're replacing the previous cost, remove it
                     if (costSoFar.ContainsKey(neighbor))
                     {
                         costSoFar.Remove(neighbor);
                         cameFrom.Remove(neighbor);
                     }
-
                     costSoFar.Add(neighbor, newCost);
                     cameFrom.Add(neighbor, curr);
                     float priority = newCost + graph.AirDistance(neighbor, endNode);
@@ -50,7 +37,6 @@ public class AStar {
                 }
             }
         }
-
         NodeType current = endNode;
         outputPath.Add(current);
         while (!current.Equals(startNode))
@@ -65,10 +51,13 @@ public class AStar {
         }
         outputPath.Add(startNode);
         outputPath.Reverse();
-
     }
 
-
+    public static List<NodeType> GetPath<NodeType>(IWeightedGraph<NodeType> graph, NodeType startNode, NodeType endNode, int maxiterations=1000) {
+        List<NodeType> path = new List<NodeType>();
+        FindPath(graph, startNode, endNode, path, maxiterations);
+        return path;
+    }
 
     public class PriorityQueue<T>
     {
@@ -103,12 +92,5 @@ public class AStar {
         }
     }
 
-
-
-    public static List<NodeType> GetPath<NodeType>(IWeightedGraph<NodeType> graph, NodeType startNode, NodeType endNode, int maxiterations=1000) {
-        List<NodeType> path = new List<NodeType>();
-        FindPath(graph, startNode, endNode, path, maxiterations);
-        return path;
-    }
 
 }
