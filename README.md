@@ -31,9 +31,9 @@ We have 16 tiles allowed: <br />
 
 <br /> <br /> <br />
 
-* Here you can see that the player walks much more slowly on brown than on the green:
+* Here you can see that the player walks much more slowly on Orange-yellow than on the yellow:
 
-  <img align="left" width="300px" height="200px" src="https://user-images.githubusercontent.com/57855070/102371628-11867b80-3fc7-11eb-94ee-a11c7fe4829b.gif"/>
+  <img align="left" width="300px" height="200px" src="https://user-images.githubusercontent.com/57855070/102458545-15f57780-404d-11eb-868b-17c3b4eecfdf.gif"/>
 
 <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 #### **2.We added that the player will have the option to carve on a mountain -** <br />
@@ -63,7 +63,7 @@ In the update function we checked whether the quarrying key was pressed and if t
 
 * Here you can see that the player carved in the rock:
 
-  <img align="left" width="300px" height="200px" src="https://user-images.githubusercontent.com/57855070/102372516-ef412d80-3fc7-11eb-86b0-b85791b9423b.gif"/>
+  <img align="left" width="300px" height="200px" src="https://user-images.githubusercontent.com/57855070/102456169-6ec31100-4049-11eb-91fd-4adf27a9d482.gif"/>
 
 
 <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
@@ -71,6 +71,7 @@ In the update function we checked whether the quarrying key was pressed and if t
 #### **3.We changed the rectangular grid to hexagon grid -** <br />
 By simply setting up a new grid and adding new sprites from the [asset store](https://assetstore.unity.com/packages/2d/environments/2d-hex-sprites-hexagonal-tile-setup-135185)
 and create new [Palette](https://github.com/GameDev-TAY/Ex_8/tree/master/Assets/HexSpriteTiles_Setup/Palettes).
+We changed the algorithm from [BFS](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/0-bfs/BFS.cs) to [ASTAR](https://github.com/GameDev-TAY/Ex_8/blob/master/Assets/Scripts/0-bfs/AStar.cs)
 
 #### **4.Paint with Unity tiles-** <br />
 We found on this [site](https://www.myabandonware.com/) A game that has a two-dimensional world at a glance, and we drew one level of it in the Unity tile map.
